@@ -117,9 +117,9 @@ spaces = skipMany1 space
 
 parseString :: Parser LispVal
 parseString = do
-  char '"'
+  char '\"'
   x <- many (noneOf "\"")
-  char '"'
+  char '\"'
   return $ String x
 
 parseAtom :: Parser LispVal
